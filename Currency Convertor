@@ -1,0 +1,68 @@
+import java.util.Scanner;
+
+public class CurrencyConverter {
+    public static void main(String[] args) {
+        Scanner scanner = new Scanner(System.in);
+
+        System.out.println("Currency Converter");
+        System.out.println("1. USD to EUR");
+        System.out.println("2. EUR to USD");
+        System.out.println("3. USD to INR");
+        System.out.println("4. INR to USD");
+        System.out.println("5. EUR to INR");
+        System.out.println("6. INR to EUR");
+
+        System.out.print("Choose an option: ");
+        int option = scanner.nextInt();
+
+        System.out.print("Enter the amount: ");
+        double amount = scanner.nextDouble();
+
+        switch (option) {
+            case 1:
+                System.out.println(amount + " USD is equal to " + usdToEur(amount) + " EUR");
+                break;
+            case 2:
+                System.out.println(amount + " EUR is equal to " + eurToUsd(amount) + " USD");
+                break;
+            case 3:
+                System.out.println(amount + " USD is equal to " + usdToInr(amount) + " INR");
+                break;
+            case 4:
+                System.out.println(amount + " INR is equal to " + inrToUsd(amount) + " USD");
+                break;
+            case 5:
+                System.out.println(amount + " EUR is equal to " + eurToInr(amount) + " INR");
+                break;
+            case 6:
+                System.out.println(amount + " INR is equal to " + inrToEur(amount) + " EUR");
+                break;
+            default:
+                System.out.println("Invalid option");
+        }
+    }
+
+    public static double usdToEur(double amount) {
+        return amount * 0.88; // 1 USD = 0.88 EUR
+    }
+
+    public static double eurToUsd(double amount) {
+        return amount * 1.13; // 1 EUR = 1.13 USD
+    }
+
+    public static double usdToInr(double amount) {
+        return amount * 74.83; // 1 USD = 74.83 INR
+    }
+
+    public static double inrToUsd(double amount) {
+        return amount * 0.013; // 1 INR = 0.013 USD
+    }
+
+    public static double eurToInr(double amount) {
+        return amount * 84.21; // 1 EUR = 84.21 INR
+    }
+
+    public static double inrToEur(double amount) {
+        return amount * 0.012; // 1 INR = 0.012 EUR
+    }
+}
